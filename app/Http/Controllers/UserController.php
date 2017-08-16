@@ -9,7 +9,7 @@ use DB;
 use Hash;
 
 class UserController extends Controller
-{
+{ 
     public function index(Request $request)
     {
 

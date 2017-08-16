@@ -37,7 +37,6 @@ Route::group(['middleware'=>['auth']], function(){
   //
   // Route::delete('user/{id}/delete',['as'=>'users.destroy', 'uses'=>'UserController@destroy']);
 
-
   Route::get('roles',['as'=>'roles.index','uses'=>'RoleController@index','middleware' => ['permission:role-list|role-create|role-edit|role-delete']]);
 
   Route::get('roles/create',['as'=>'roles.create','uses'=>'RoleController@create','middleware' => ['permission:role-create']]);
@@ -53,7 +52,11 @@ Route::group(['middleware'=>['auth']], function(){
   Route::delete('roles/{id}',['as'=>'roles.destroy','uses'=>'RoleController@destroy','middleware' => ['permission:role-delete']]);
 
 
-  Route::get('item',['as'=>'item.index','uses'=>'ItemController@index','middleware' => ['permission:item-list|item-create|item-edit|item-delete']]);
+
+   Route::get('item',['as'=>'item.index', 'uses'=>'ItemController@index']);
+
+  // Route::get('item',['as'=>'item.index','uses'=>'ItemController@index',
+              // 'middleware' => ['permission:item-list|item-create|item-edit|item-delete']]);
 
   Route::get('item/create',['as'=>'item.create','uses'=>'ItemController@create','middleware' => ['permission:item-create']]);
 
